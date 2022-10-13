@@ -20,7 +20,6 @@ const AddPost = () => {
     try {
       const res = await axios.post(
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/posts`,
-
         data
       );
       router.push("/posts");
