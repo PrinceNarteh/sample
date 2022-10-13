@@ -4,7 +4,7 @@ import { getPosts } from "../../utils/getPosts";
 export async function getStaticPaths() {
   const res = await getPosts();
 
-  const paths = res.map((post) => ({ params: { postId: b } }));
+  const paths = res.map((post) => ({ params: { postId: String(post._id) } }));
 
   return {
     paths,
@@ -27,7 +27,8 @@ const PostDetails = ({ post }) => {
     <div>
       <h1>PostDetails</h1>
       <hr />
-      {post.title}
+      <h3>{post.title}</h3>
+      <p>{post.body}</p>
     </div>
   );
 };
