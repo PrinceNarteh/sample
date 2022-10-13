@@ -23,8 +23,8 @@ const Posts = ({ posts }) => {
 
   return (
     <div>
-      {posts?.map((post) => (
-        <p>
+      {posts?.map((post, idx) => (
+        <p key={idx}>
           <Link href={`/posts/${post._id}`}>{post.title}</Link>
         </p>
       ))}
